@@ -366,7 +366,6 @@ window.onload = () => {
 		} else {
 			const content = document.querySelector('html');
 			content.classList.add('inverted');
-			console.log("night");
 		}
 
         progress_bar.value = progress * 100.0;
