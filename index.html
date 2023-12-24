@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="la">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,8 @@
         height: 100%;
         text-align: center;
         font-size: max(1.6vw, 12px);
+        background-color: #f7f7f7; /* Set a background color */
+        color: #080808;
     }
     .hr {
         position: absolute;
@@ -21,17 +23,20 @@
         transform: translateX(-50%) translateY(-50%);
     }
     h1 {
-        font-family: 'Computer Modern Serif';
+        font-family: 'Computer Modern Serif', serif;
     }
     p {
-        font-family: 'EB Garamond';
+        font-family: 'EB Garamond', serif;
+    }
+    a {
+        color: #080808;
     }
     progress {
         width: 100%;
         height: 0.3vw;
         background-color: transparent;
-        outline-color: #ffffff;
-        color: black;
+        outline-color: transparent;
+        color: #080808;
         border: 0;
         /* padding: 0px;
         border-radius: 0px; */
@@ -40,31 +45,32 @@
         width: 100%;
         height: 0.3vw;
         background-color: transparent;
-        outline-color: #ffffff;
-        color: black;
+        outline-color: transparent;
         border: 0;
-        background-color: black;
     }
     progress::-webkit-progress-value {
         width: 100%;
         height: 0.3vw;
-        background-color: transparent;
-        outline-color: #ffffff;
-        color: black;
+        background-color: #080808;
+        outline-color: transparent;
         border: 0;
     }
     progress::-moz-progress-bar {
         width: 100%;
         height: 0.3vw;
         background-color: transparent;
-        outline-color: #ffffff;
+        outline-color: transparent;
         color: black;
         border: 0;
+        background-color: #080808;
     }
     .footnote {
         position: absolute; bottom: 0px; 
         left: 50%;
         transform: translateX(-50%);
+    }
+    .inverted {
+        filter: invert(100%);
     }
     </style>
     <script src="index.js"></script>
@@ -72,12 +78,12 @@
 <body>
     <div class="hr">
         <h1>HOROLOGIVM ROMANVM</h1>
-        <p id="clock">VIII diēī hōra – a. d. IX Kal. Iānuāriās – MMDCCLXXVI AVC</p>
+        <p lang="it" id="clock">VIII diēī hōra – a. d. IX Kal. Iānuāriās – MMDCCLXXVI AVC</p>
         <progress id="prog" value="10" max="100"></progress>
     </div>
 
     <div class="footnote">
-        <p style="font-size: 1vw;"><em>
+        <p lang="it" style="font-size: 1vw;"><em>
             Locum queritur modo ut dīligenter hōra dīcātur: <br>
             nisi locum datum, hōra computātur sōlis ortuī occāsuīque temporibus Rōmānīs.<br><br>
             Cōdex <a href="https://github.com/MichaelObvious/hr" target="_blank" rel="noopener noreferrer">hīc</a> repperī potest.

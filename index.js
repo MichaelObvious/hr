@@ -359,6 +359,16 @@ window.onload = () => {
         let [h, progress] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
         let d = day_name(time.getDate(), time.getMonth()+1, time.getFullYear());
         let y = year_name(time.getFullYear());
+
+		if (h.indexOf('d') !== -1) { // is day
+			const content = document.querySelector('html');
+			content.classList.remove('inverted');
+		} else {
+			const content = document.querySelector('html');
+			content.classList.add('inverted');
+			console.log("night");
+		}
+
         progress_bar.value = progress * 100.0;
         clock.innerHTML = `${h} – ${d} – ${y}`;
         setTimeout(update, 1000);
