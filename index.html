@@ -12,7 +12,7 @@
     html, body {
         height: 100%;
         text-align: center;
-        font-size: max(1.6vw, 12px);
+        font-size: max(1.6vw, 24px);
         background-color: #f7f7f7; /* Set a background color */
         color: #080808;
     }
@@ -22,7 +22,7 @@
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
     }
-    h1 {
+    h2 {
         font-family: 'Computer Modern Serif', serif;
     }
     p {
@@ -77,13 +77,13 @@
 </head>
 <body>
     <div class="hr">
-        <h1>HOROLOGIVM ROMANVM</h1>
+        <h2>HOROLOGIVM ROMANVM</h2>
         <p lang="it" id="clock">VIII diēī hōra – a. d. IX Kal. Iānuāriās – MMDCCLXXVI AVC</p>
         <progress id="prog" value="10" max="100"></progress>
     </div>
 
     <div class="footnote">
-        <p lang="it" style="font-size: 1vw;"><em>
+        <p lang="it" style="font-size: max(1vw, 16px);"><em>
             Locum queritur modo ut dīligenter hōra dīcātur: <br>
             nisi locum datum, hōra computātur Rōmānīs temporibus ortuī occāsuīque sōlis.<br><br>
             Cōdex <a href="https://github.com/MichaelObvious/hr" target="_blank" rel="noopener noreferrer">hīc</a> reperīrī potest.

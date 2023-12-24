@@ -157,33 +157,33 @@ function day_name(day, month, year) {
 	if (day != kalendae && day != mlength
         && day != nonae && day != nonae-1
         && day != idus && day != idus-1) {
-		str += "a. d. ";
+		str += "a.&nbsp;d.&nbsp;";
 
 		if (day > kalendae && day < nonae) {
 			str += roman_numeral(nonae+1-day);
-			str += " ";
+			str += "&nbsp;";
 		} else if (day > kalendae && day < idus) {
 			str += roman_numeral(idus+1-day);
-			str += " ";
+			str += "&nbsp;";
 		} else if (day > kalendae) {
 			str += roman_numeral(mlength+2-day);
-			str += " ";
+			str += "&nbsp;";
 		}
     } else if (day == mlength || day == nonae-1 || day == idus-1) {
-		str += "Prid. ";
+		str += "Prid.&nbsp;";
     }
 	
 	if (day == kalendae) {
-		str += "Kal. ";
+		str += "Kal.&nbsp;";
 		str += month_name(month);
     } else if (day <= nonae) {
-		str += "Nōn. ";
+		str += "Nōn.&nbsp;";
 		str += month_name(month);
 	} else if (day <= idus) {
-		str += "Eid. ";
+		str += "Eid.&nbsp;";
 		str += month_name(month);
 	} else {
-		str += "Kal. ";
+		str += "Kal.&nbsp;";
 		str += month_name((month)%12 + 1);
     }
 
@@ -193,7 +193,7 @@ function day_name(day, month, year) {
 function year_name(year) {
     let str = "";
     str += roman_numeral(year + 753);
-    str += " AVC";
+    str += "&nbsp;AVC";
     return str;
 }
 
@@ -370,7 +370,7 @@ window.onload = () => {
 		}
 
         progress_bar.value = progress * 100.0;
-        clock.innerHTML = `${h}&nbsp; &nbsp;–&nbsp; &nbsp;${d}&nbsp; – &nbsp;${y}`;
+        clock.innerHTML = `${h}&nbsp; &nbsp;–&nbsp;&nbsp;&nbsp;${d}&nbsp;&nbsp;&nbsp;–&nbsp; &nbsp;${y}`;
         setTimeout(update, 1000);
     };
     update();
