@@ -370,7 +370,7 @@ window.onload = () => {
 		}
 
         progress_bar.value = progress * 100.0;
-        clock.innerHTML = `${h} – ${d} – ${y}`;
+        clock.innerHTML = `${h}&nbsp; &nbsp;–&nbsp; &nbsp;${d}&nbsp; – &nbsp;${y}`;
         setTimeout(update, 1000);
     };
     update();
