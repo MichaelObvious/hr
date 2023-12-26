@@ -319,8 +319,8 @@ function hour_name(hour, minute, sec, day, month, year) {
     } else {
 		let vigilia; 
 		if (current_time < rise_time) {
-			vigilia = (current_time + 24 * 60 - prev_set_time) / prev_vigilia_duration;
-			progress = ((current_time + 24 * 60 - prev_set_time) % prev_vigilia_duration) / prev_vigilia_duration;
+			vigilia = (current_time + 24 * 3600 - prev_set_time) / prev_vigilia_duration;
+			progress = ((current_time + 24 * 3600 - prev_set_time) % prev_vigilia_duration) / prev_vigilia_duration;
 		} else {
 			vigilia = (current_time - set_time) / next_vigilia_duration;
 			progress = ((current_time - set_time) % next_vigilia_duration) /  next_vigilia_duration;
