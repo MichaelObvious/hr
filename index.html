@@ -33,7 +33,7 @@
     }
     progress {
         width: 100%;
-        height: 0.3vw;
+        height: max(0.3vw, 4px);
         background-color: transparent;
         outline-color: transparent;
         color: #080808;
@@ -43,21 +43,21 @@
     }
     progress::-webkit-progress-bar {
         width: 100%;
-        height: 0.3vw;
+        height: max(0.3vw, 4px);
         background-color: transparent;
         outline-color: transparent;
         border: 0;
     }
     progress::-webkit-progress-value {
         width: 100%;
-        height: 0.3vw;
+        height: max(0.3vw, 4px);
         background-color: #080808;
         outline-color: transparent;
         border: 0;
     }
     progress::-moz-progress-bar {
         width: 100%;
-        height: 0.3vw;
+        height: max(0.3vw, 4px);
         background-color: transparent;
         outline-color: transparent;
         color: black;
@@ -65,9 +65,14 @@
         background-color: #080808;
     }
     .footnote {
-        position: absolute; bottom: 0px; 
-        left: 50%;
-        transform: translateX(-50%);
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    @media only screen and (max-height: 475px) {
+        .footnote {
+            display: none;
+        }
     }
     .inverted {
         filter: invert(100%);
@@ -82,8 +87,10 @@
         <progress id="prog" value="0" max="100"></progress>
     </div>
 
+    <div style="height: max(80%, 750px);"></div>
+
     <div class="footnote">
-        <p lang="it" style="font-size: max(1vw, 16px);"><em>
+        <p lang="it" style="font-size: min(2vh, 16px);"><em>
             Locum queritur modo ut dīligenter hōra dīcātur: <br>
             nisi locum datum, hōra computātur Rōmānīs temporibus ortuī occāsuīque sōlis.<br><br>
             Fōns pāginae <a href="https://github.com/MichaelObvious/hr" target="_blank" rel="noopener noreferrer">hīc</a> reperīrī potest.
