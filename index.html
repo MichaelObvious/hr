@@ -34,7 +34,7 @@
     progress {
         width: 100%;
         height: max(0.3vw, 4px);
-        background-color: transparent;
+        background-color: #eeeeee;
         outline-color: transparent;
         color: #080808;
         border: 0;
@@ -44,7 +44,7 @@
     progress::-webkit-progress-bar {
         width: 100%;
         height: max(0.3vw, 4px);
-        background-color: transparent;
+        background-color: #eeeeee;
         outline-color: transparent;
         border: 0;
     }
@@ -58,11 +58,10 @@
     progress::-moz-progress-bar {
         width: 100%;
         height: max(0.3vw, 4px);
-        background-color: transparent;
+        background-color: #080808;
         outline-color: transparent;
         color: black;
         border: 0;
-        background-color: #080808;
     }
     .footnote {
         position: fixed;
@@ -75,7 +74,7 @@
         }
     }
     .inverted {
-        filter: invert(100%);
+        filter: invert(100%) hue-rotate(180deg);
     }
     </style>
     <script src="index.js"></script>
