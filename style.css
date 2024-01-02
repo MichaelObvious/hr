@@ -1,0 +1,75 @@
+html, body {
+    height: 100%;
+    text-align: center;
+    font-size: max(1.6vw, 24px);
+    background-color: #f7f7f7; /* Set a background color */
+    color: #080808;
+}
+.hr {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+h2 {
+    font-family: 'Computer Modern Serif', serif;
+}
+p {
+    font-family: 'EB Garamond', serif;
+}
+a {
+    color: #080808;
+}
+progress {
+    width: 100%;
+    height: max(0.3vw, 4px);
+    background-color: #eeeeee;
+    outline-color: transparent;
+    color: #080808;
+    border: 0;
+    /* padding: 0px;
+    border-radius: 0px; */
+}
+progress::-webkit-progress-bar {
+    width: 100%;
+    height: max(0.3vw, 4px);
+    background-color: #eeeeee;
+    outline-color: transparent;
+    border: 0;
+}
+progress::-webkit-progress-value {
+    width: 100%;
+    height: max(0.3vw, 4px);
+    background-color: #080808;
+    outline-color: transparent;
+    border: 0;
+}
+progress::-moz-progress-bar {
+    width: 100%;
+    height: max(0.3vw, 4px);
+    background-color: #080808;
+    outline-color: transparent;
+    color: black;
+    border: 0;
+}
+.footnote {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+@media only screen and (max-height: 475px) {
+    .footnote {
+        display: none;
+    }
+}
+.inverted {
+    filter: invert(100%) hue-rotate(180deg);
+}
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
