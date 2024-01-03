@@ -37,8 +37,8 @@ function fmod(a, b) {
 }
 
 function is_leap_year(year) {
-	return year % 4 == 0
-           && !(year % 100 == 0 && !(year % 400 == 0));
+	return year % 4 === 0
+           && !(year % 100 === 0 && !(year % 400 === 0));
 }
 
 function month_length(month, year) {
@@ -169,11 +169,11 @@ function day_name(day, month, year) {
 			str += roman_numeral(mlength+2-day);
 			str += "&nbsp;";
 		}
-    } else if (day == mlength || day == nonae-1 || day == idus-1) {
+    } else if (day === mlength || day === nonae-1 || day === idus-1) {
 		str += "Prid.&nbsp;";
     }
 	
-	if (day == kalendae) {
+	if (day === kalendae) {
 		str += "Kal.&nbsp;";
 		str += month_name(month);
     } else if (day <= nonae) {
@@ -234,6 +234,7 @@ function day_calc(day, month, year, f, l_w, elevation) {
 function hour_name(hour, minute, sec, day, month, year) {
     let progress;
     let str = "";
+	let correction = 0;
 
 	// no problem for month, it automatically fixes itself
 	let [yesterday_sunrise, yesterday_sunset] = day_calc(day-1, month, year, LAT, LON, ELE);
@@ -327,6 +328,13 @@ function hour_name(hour, minute, sec, day, month, year) {
 		}
 
 		str += roman_numeral(Math.floor(vigilia) + 1);
+
+		if (vigilia === 1 && current_time < rise_time) {
+			correction = -1;
+		}
+		if (vigilia === 2 && current_time > set_time) {
+			correction = 1;
+		}
 		// switch (vigilia) {
 		// 	case 0:
 		// 		fprintf(sink, "prīma");
@@ -345,7 +353,7 @@ function hour_name(hour, minute, sec, day, month, year) {
         // }
 		str += " noctis vigilia";
     }
-    return [str, progress];
+    return [str, progress, correction];
 }
 
 window.onload = () => {
@@ -356,8 +364,8 @@ window.onload = () => {
 
     let update = () => {
         let time = new Date();
-        let [h, progress] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
-        let d = day_name(time.getDate(), time.getMonth()+1, time.getFullYear());
+        let [h, progress, correction] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
+        let d = day_name(time.getDate() + correction, time.getMonth()+1, time.getFullYear());
         let y = year_name(time.getFullYear());
 
 		if (h.indexOf('d') !== -1) { // is day
