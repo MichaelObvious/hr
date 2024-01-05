@@ -329,10 +329,10 @@ function hour_name(hour, minute, sec, day, month, year) {
 
 		str += roman_numeral(Math.floor(vigilia) + 1);
 
-		if (vigilia === 1 && current_time < rise_time) {
+		if (Math.floor(vigilia) === 1 && current_time < rise_time) {
 			correction = -1;
 		}
-		if (vigilia === 2 && current_time > set_time) {
+		if (Math.floor(vigilia) === 2 && current_time > set_time) {
 			correction = 1;
 		}
 		// switch (vigilia) {
