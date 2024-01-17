@@ -218,6 +218,10 @@ let sentences = [
     {
         text: 'Soli soli soli',
         from: 'verborum ludo',
+    },
+    {
+        text: 'Ecce nunc tempus acceptabile, ecce nunc dies salutis',
+        from: 'ad Corinthios Epistula II VI',
     }
 ];
 
