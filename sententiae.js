@@ -141,11 +141,7 @@ let sentences = [
     },
     {
         text: 'Hora est iam nos de somno surgere',
-        from: 'ad Romanos Epistula XIII',
-    },
-    {
-        text: 'Discat homo dinumerare horas, quot illarum vivit, tot breviat moras',
-        from: 'Meridiana quadam',
+        from: 'ad Romanos Epistisday',
     },
     {
         text: 'Iam propera nec te venturas differ in horas, qui non est hodie, cras minus aptus erit',
@@ -225,14 +221,50 @@ let sentences = [
     }
 ];
 
+function hourhash() {
+    let time = new Date();
+    let [d, sg, st, p, correction] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
+    
+    let start = new Date(time.getFullYear(), 0, 0);
+    let diff = time - start;
+    let oneDay = 1000 * 60 * 60 * 24;
+    let day = Math.floor(diff / oneDay);
+    let year_day = day + correction;
+
+    let hash = (new Date()).getFullYear() * 3503909
+               + year_day * 1200077
+               + d * 563
+               + sg * 37;
+    
+    return hash;
+}
+
+let wsdmLabel;
+let wsdmDiv;
+
+let changeText = (s) => {
+    wsdmLabel.innerHTML = s.text;
+    wsdmDiv.classList.remove("toerase");
+    wsdmDiv.classList.add("towrite");
+}
+
 let loadSententiae = () => {
-    let wsdmLabel = document.getElementById("wisdom");
+    wsdmDiv = document.getElementById("wsddiv");
+    wsdmLabel = document.getElementById("wisdom");
     // let attrLabel = document.getElementById("attr");
 
-    let today_hash = dayOfYear() * 37 + (new Date()).getFullYear() * 563;
-    let idx = today_hash % sentences.length;
+    let idx = hourhash() % sentences.length;
     let s = sentences[idx];
-    wsdmLabel.innerHTML = s.text;
+    if (wsdmLabel.innerHTML !== s.text) {
+        wsdmDiv.classList.remove("towrite");
+        wsdmDiv.classList.add("toerase");
+        if (wsdmLabel.innerHTML === "...") {
+            changeText(s);
+        } else {
+            setTimeout(changeText, 15000, s);
+        }
+    }
+    setTimeout(loadSententiae, 20000);
 
     // wsdmLabel.innerHTML = `«${s.text}»`;
     // attrLabel.innerHTML = `ex ${s.from}.`;

@@ -250,6 +250,8 @@ function day_calc(day, month, year, f, l_w, elevation) {
 function hour_name(hour, minute, sec, day, month, year) {
     let progress;
     let str = "";
+	let segment;
+	let isday;
 	let correction = 0;
 
 	// no problem for month, it automatically fixes itself
@@ -289,9 +291,12 @@ function hour_name(hour, minute, sec, day, month, year) {
 	let current_time = hour * 3600 + minute * 60 + sec;
 
 	if (current_time >= rise_time && current_time < set_time) {
+		isday = 1;
 		progress = ((current_time - rise_time) % hour_duration) / hour_duration;
         // console.log(((current_time - rise_time) / hour_duration) + 1);
-		str += roman_numeral(Math.floor((current_time - rise_time) / hour_duration) + 1);
+		let hour = Math.floor((current_time - rise_time) / hour_duration) + 1;
+		segment = hour
+		str += roman_numeral(hour);
 		// switch((current_time - rise_time) / hour_duration) {
 		// 	case 0:
 		// 		fprintf(sink, "prīma");
@@ -319,10 +324,7 @@ function hour_name(hour, minute, sec, day, month, year) {
         //         break;
 		// 	case 8:
 		// 		fprintf(sink, "nōna");
-        //         break;
-		// 	case 9:
-		// 		fprintf(sink, "decima");
-        //         break;
+        //      Math.floor(vigilia)   break;
 		// 	case 10:
 		// 		fprintf(sink, "ūndecima");
         //         break;
@@ -334,6 +336,7 @@ function hour_name(hour, minute, sec, day, month, year) {
         // }
 		str += " diēī hōra";
     } else {
+		isday = 0;
 		let vigilia; 
 		if (current_time < rise_time) {
 			vigilia = (current_time + 24 * 3600 - prev_set_time) / prev_vigilia_duration;
@@ -342,13 +345,15 @@ function hour_name(hour, minute, sec, day, month, year) {
 			vigilia = (current_time - set_time) / next_vigilia_duration;
 			progress = ((current_time - set_time) % next_vigilia_duration) /  next_vigilia_duration;
 		}
+		vigilia = Math.floor(vigilia) + 1;
+		segment = vigilia;
 
-		str += roman_numeral(Math.floor(vigilia) + 1);
+		str += roman_numeral(vigilia);
 
-		if (Math.floor(vigilia) === 1 && current_time < rise_time) {
+		if (vigilia === 2 && current_time < rise_time) {
 			correction = -1;
 		}
-		if (Math.floor(vigilia) === 2 && current_time > set_time) {
+		if (vigilia === 3 && current_time > set_time) {
 			correction = 1;
 		}
 		// switch (vigilia) {
@@ -369,21 +374,7 @@ function hour_name(hour, minute, sec, day, month, year) {
         // }
 		str += " noctis vigilia";
     }
-    return [str, progress, correction];
-}
-
-
-function dayOfYear() {
-    // source: https://stackoverflow.com/questions/8619879/javascript-calculate-the-day-of-the-year-1-366
-    let now = new Date();
-    let start = new Date(now.getFullYear(), 0, 0);
-    let diff = now - start;
-    let oneDay = 1000 * 60 * 60 * 24;
-    let day = Math.floor(diff / oneDay);
-
-	let time = new Date();
-    let [s, p, correction] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
-    return day + correction;
+    return [isday, segment, str, progress, correction];
 }
 
 let loadHorologium = () => {
@@ -396,7 +387,7 @@ let loadHorologium = () => {
 
     let update = () => {
         let time = new Date();
-        let [h, progress, correction] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
+        let [isday, segment, h, progress, correction] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
         let d = day_name(time.getDate() + correction, time.getMonth()+1, time.getFullYear());
         let y = year_name(time.getFullYear());
 
