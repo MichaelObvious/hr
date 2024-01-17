@@ -36,7 +36,7 @@ let sentences = [
         from: 'Meridiana quadam',
     },
     {
-        text: 'Vita brevis, ars longa, occasio praeceps, experimentum periculosum iudicium difficile',
+        text: 'Vita brevis, ars longa, occasio praeceps, experimentum periculosum, iudicium difficile',
         from: 'Hippocratis Aphorismon',
     },
     {
@@ -56,7 +56,7 @@ let sentences = [
         from: 'Siracidis libro XVII',
     },
     {
-        text: 'Memento famis in tempore abundantie et enecessitatum paupertatis in die divitiarum',
+        text: 'Memento famis in tempore abundantie et necessitatum paupertatis in die divitiarum',
         from: 'Siracidis libro XVIII',
     },
     {
@@ -66,6 +66,10 @@ let sentences = [
     {
         text: 'Tempus enim prope est',
         from: 'Apocalypson libro XXII',
+    },
+    {
+        text: 'Est omnino nulla opus tempus persequi; non aufugit a nobis, sed ad nos accurrit',
+        from: 'Antonii Bloom Incipio orationis',
     },
     {
         text: ' ',
