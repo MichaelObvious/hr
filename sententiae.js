@@ -1,7 +1,7 @@
 let sentences = [
     {
         text: 'Dum loquimur fugerit invida / aetas: carpe diem, quam minimum credula postero',
-        from: 'Oratii Carmina I, XI',
+        from: 'Horatii Carminis I, XI',
     },
     {
         text: 'Sed fugit interea fugit irreparabile tempus',
@@ -34,6 +34,38 @@ let sentences = [
     {
         text: 'Sine sole sileo?',
         from: 'Meridiana quadam',
+    },
+    {
+        text: 'Vita brevis, ars longa, occasio praeceps, experimentum periculosum iudicium difficile',
+        from: 'Hippocratis Aphorismon',
+    },
+    {
+        text: 'Tempus rerum edax',
+        from: 'Ovidii Metamorphoseon XV',
+    },
+    {
+        text: 'Vitae summa brevis spem nos vetat inchoare longam',
+        from: 'Horatii Carminis I, IV',
+    },
+    {
+        text: 'Omnia tempus habent, et momentum suum cuique negotio sub caelo',
+        from: 'Ecclesiastae libro III',
+    },
+    {
+        text: 'Numerum dierum et tempus dedit illi et dedit illi potestatem eorum, quae sunt super terram',
+        from: 'Siracidis libro XVII',
+    },
+    {
+        text: 'Memento famis in tempore abundantie et enecessitatum paupertatis in die divitiarum',
+        from: 'Siracidis libro XVIII',
+    },
+    {
+        text: 'Respice post te; hominem te memento, memento mori',
+        from: 'more Romano',
+    },
+    {
+        text: 'Tempus enim prope est',
+        from: 'Apocalypson libro XXII',
     },
     {
         text: ' ',
