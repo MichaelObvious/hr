@@ -252,9 +252,7 @@ function hourhash() {
     let year_day = day + correction;
 
     let hash = (new Date()).getFullYear() * 3503909
-               + year_day * 1200077
-               + d * 563
-               + sg * 37;
+               + (year_day * 16 + d * 4 + sg) * 37;
     
     return hash;
 }

@@ -295,7 +295,7 @@ function hour_name(hour, minute, sec, day, month, year) {
 		progress = ((current_time - rise_time) % hour_duration) / hour_duration;
         // console.log(((current_time - rise_time) / hour_duration) + 1);
 		let hour = Math.floor((current_time - rise_time) / hour_duration) + 1;
-		segment = hour
+		segment = hour-1;
 		str += roman_numeral(hour);
 		// switch((current_time - rise_time) / hour_duration) {
 		// 	case 0:
@@ -346,7 +346,7 @@ function hour_name(hour, minute, sec, day, month, year) {
 			progress = ((current_time - set_time) % next_vigilia_duration) /  next_vigilia_duration;
 		}
 		vigilia = Math.floor(vigilia) + 1;
-		segment = vigilia;
+		segment = vigilia-1;
 
 		str += roman_numeral(vigilia);
 
