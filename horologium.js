@@ -372,6 +372,20 @@ function hour_name(hour, minute, sec, day, month, year) {
     return [str, progress, correction];
 }
 
+
+function dayOfYear() {
+    // source: https://stackoverflow.com/questions/8619879/javascript-calculate-the-day-of-the-year-1-366
+    let now = new Date();
+    let start = new Date(now.getFullYear(), 0, 0);
+    let diff = now - start;
+    let oneDay = 1000 * 60 * 60 * 24;
+    let day = Math.floor(diff / oneDay);
+
+	let time = new Date();
+    let [s, p, correction] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
+    return day + correction;
+}
+
 let loadHorologium = () => {
 	checkStorage();
     getLocation();
@@ -386,11 +400,10 @@ let loadHorologium = () => {
         let d = day_name(time.getDate() + correction, time.getMonth()+1, time.getFullYear());
         let y = year_name(time.getFullYear());
 
+		let content = document.querySelector('html');
 		if (h.indexOf('d') !== -1) { // is day
-			const content = document.querySelector('html');
 			content.classList.remove('inverted');
 		} else {
-			const content = document.querySelector('html');
 			content.classList.add('inverted');
 		}
 

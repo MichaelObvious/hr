@@ -34,10 +34,9 @@ let sentences = [
     {
         text: 'Sine sole sileo?',
         from: 'Meridiana quadam',
-    }
-    ,
+    },
     {
-        text: '',
+        text: ' ',
         from: '',
     }
 ];
@@ -46,28 +45,10 @@ let loadSententiae = () => {
     let wsdmLabel = document.getElementById("wisdom");
     // let attrLabel = document.getElementById("attr");
 
-    if (localStorage.getItem('sentences') === null) {
-        localStorage.setItem('sentences', JSON.stringify([]));
-    }
-
-    console.log(localStorage.getItem('sentences'));
-
-    let used_idx = JSON.parse(localStorage.getItem('sentences'));
-    if (used_idx.length == sentences.length) {
-        used_idx = [];
-    }
-
-    let i = 0;
-    let idx;
-    do {
-        idx = Math.floor(Math.random() * sentences.length - 0.0001);
-    } while (i < 1000 && used_idx.includes(idx));
-    used_idx.push(idx);
-
+    let today_hash = dayOfYear() * 37 + (new Date()).getFullYear() * 563;
+    let idx = today_hash % sentences.length;
     let s = sentences[idx];
     wsdmLabel.innerHTML = s.text;
-
-    localStorage.setItem('sentences', JSON.stringify(used_idx));
 
     // wsdmLabel.innerHTML = `«${s.text}»`;
     // attrLabel.innerHTML = `ex ${s.from}.`;
