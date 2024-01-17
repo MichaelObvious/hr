@@ -44,7 +44,7 @@ let sentences = [
         from: 'Ovidii Metamorphoseon XV',
     },
     {
-        text: 'Vitae summa brevis spem nos vetat inchoare longam',
+        text: 'Vitae summa brevis spem nos vetat incohare longam',
         from: 'Horatii Carminis I, IV',
     },
     {
