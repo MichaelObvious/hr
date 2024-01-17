@@ -222,6 +222,22 @@ let sentences = [
     {
         text: 'Ecce nunc tempus acceptabile, ecce nunc dies salutis',
         from: 'ad Corinthios Epistula II VI',
+    },
+    {
+        text: 'Omnia aliena sunt, tempus tantum nostrum est',
+        from: 'Senecae Minoris Epistulis moralibus ad Lucilium I'
+    },
+    {
+        text: 'Quid enim necesse est mala accersere, satis cito patienda cum venerint praesumere, ac praesens tempus futuri metu perdere?',
+        from: 'Senecae Minoris Epistulis moralibus ad Lucilium XXIII'
+    },
+    {
+        text: 'Cotidie morimur; cotidie enim demitur aliqua pars vitae, et tunc quoque cum crescimus vita decrescit',
+        from: 'Senecae Minoris Epistulis moralibus ad Lucilium XXIV'
+    },
+    {
+        test: 'Si vult homo, in una die usque ad vesperam pervenit ad mensuram divinitatis',
+        from: 'Apophtegmatis Patrum, Abbae Alonii verbis'
     }
 ];
 
