@@ -392,7 +392,7 @@ let loadHorologium = () => {
         let y = year_name(time.getFullYear());
 
 		let content = document.querySelector('html');
-		if (h.indexOf('d') !== -1) { // is day
+		if (isday == 1) {
 			content.classList.remove('inverted');
 		} else {
 			content.classList.add('inverted');
