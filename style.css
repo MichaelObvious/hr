@@ -20,17 +20,17 @@ p {
 a {
     color: #080808;
 }
-.wsdm {
-    font-size: max(min(3.5vh, 2vw), 18px);
-    color: #5f5f5f;
-    font-family: 'Tangerine', serif;
-    padding-top: 32px;
-    padding-left: 12px;
-    padding-right: 12px;
+.wsdmc {
     animation: fade 90s infinite ease, write 15s 1 ease;
     mask-repeat: no-repeat;
 }
-
+.wsdm {
+    font-size: max(min(3.5vh, 2vw), 18px);
+    font-family: 'Tangerine', serif;
+    padding-top: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
 @keyframes fade {
     0%   {color: #8f8f8f;}
     20%  {color: #2f2f2f;}
@@ -47,15 +47,17 @@ a {
         mask-size: 0%;
         mask-image: linear-gradient(
           to right,
-          rgba(0, 0, 0, 1) 80%,
+          /* 0.33turn, */
+          rgba(0, 0, 0, 1) 75%,
           rgba(0, 0, 0, 0)
         );
       }
       100% {
-        mask-size: 100%;
+        mask-size: 134%;
         mask-image: linear-gradient(
           to right,
-          rgba(0, 0, 0, 1) 80%,
+          /* 0.33turn, */
+          rgba(0, 0, 0, 1) 75%,
           rgba(0, 0, 0, 0)
         );
       }
