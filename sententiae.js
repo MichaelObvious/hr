@@ -113,7 +113,7 @@ let sentences = [
     },
     {
         text: 'Memento nos ambo dinumerare: tu meas, ego tuas.',
-        from: '',
+        from: 'Meridiana quadam',
     },
     {
         text: 'Senescis aspiciendo',

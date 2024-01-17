@@ -29,7 +29,7 @@ a {
     mask-repeat: no-repeat;
 }
 .wsdm {
-    font-size: max(min(3.5vh, 2vw), 18px);
+    font-size: max(min(3.5vh, 2.5vw), 18px);
     font-family: 'Tangerine', serif;
     padding-top: 32px;
     padding-left: 24px;
@@ -125,7 +125,7 @@ progress::-moz-progress-bar {
     bottom: 0;
     width: 100%;
 }
-@media only screen and (max-height: 475px) {
+@media only screen and (max-height: 550px) {
     .footnote {
         display: none;
     }
