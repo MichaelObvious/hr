@@ -222,10 +222,6 @@ let sentences = [
     {
         text: 'Soli soli soli',
         from: 'verborum ludo',
-    },
-    {
-        text: ' ',
-        from: '',
     }
 ];
 
