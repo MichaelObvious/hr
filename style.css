@@ -27,17 +27,35 @@ a {
     padding-top: 32px;
     padding-left: 12px;
     padding-right: 12px;
-    animation-name: fade;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
+    animation: fade 45s infinite ease, write 15s 1 ease;
+    mask-repeat: no-repeat;
 }
 
 @keyframes fade {
     0%   {color: #8f8f8f;}
-    25%  {color: #3f3f3f;}
-    50%  {color: #8f8f8f;}
-    75%  {color: #f1f1f1;}
+    25% {color: #3f3f3f;}
+    66%  {color: #8f8f8f;}
+    75%  {color: #f7f7f7;}
     100% {color: #8f8f8f;}
+}
+
+@keyframes write {
+    0% {
+        mask-size: 0%;
+        mask-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 1) 70%,
+          rgba(0, 0, 0, 0)
+        );
+      }
+      100% {
+        mask-size: 100%;
+        mask-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 1) 70%,
+          rgba(0, 0, 0, 0)
+        );
+      }
 }
 
 progress {
