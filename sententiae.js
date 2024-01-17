@@ -256,11 +256,11 @@ let loadSententiae = () => {
     let idx = hourhash() % sentences.length;
     let s = sentences[idx];
     if (wsdmLabel.innerHTML !== s.text) {
-        wsdmDiv.classList.remove("towrite");
-        wsdmDiv.classList.add("toerase");
         if (wsdmLabel.innerHTML === "...") {
             changeText(s);
         } else {
+            wsdmDiv.classList.remove("towrite");
+            wsdmDiv.classList.add("toerase");
             setTimeout(changeText, 15000, s);
         }
     }
