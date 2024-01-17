@@ -1,6 +1,6 @@
 let sentences = [
     {
-        text: 'Dum loquimur fugerit invida / aetas: carpe diem, quam minimum credula postero',
+        text: 'Dum loquimur fugerit invida aetas: carpe diem, quam minimum credula postero',
         from: 'Horatii Carminis I, XI',
     },
     {
@@ -12,23 +12,23 @@ let sentences = [
         from: 'Svetonii De vita Caesarum XXV, IV',
     },
     {
-        text: 'Rapiamus, amici, / occasionem de die, dumque virent genua',
+        text: 'Rapiamus, amici, occasionem de die, dumque virent genua',
         from: 'Horatii Epod.. XVIII',
     },
     {
-        text: 'Non semper violae nec hiantia lilia florent, / et riget amissa spina relicta rosa',
+        text: 'Non semper violae nec hiantia lilia florent, et riget amissa spina relicta rosa',
         from: 'Ovidii Arte amatoria II',
     },
     {
-        text: 'Neque enim consistere flumen / nec levis hora potest: sed ut unda impellitur unda / urgeturque prior veniente urgetque priorem, / tempora sic fugiunt pariter pariterque sequuntur',
+        text: 'Neque enim consistere flumen nec levis hora potest: sed ut unda impellitur unda urgeturque prior veniente urgetque priorem, tempora sic fugiunt pariter pariterque sequuntur',
         from: 'Ovidii Metamorphoseon XV',
     },
     {
-        text: 'Et nova sunt semper; nam quod fuit ante, relictum est, / fitque, quod haud fuerat, momentaque cuncta novantur',
+        text: 'Et nova sunt semper; nam quod fuit ante, relictum est, fitque, quod haud fuerat, momentaque cuncta novantur',
         from: 'Ovidii Metamorphoseon XV',
     },
     {
-        text: 'Stat sua cuique dies, breve et inreparabile tempus / omnibus est vitae',
+        text: 'Stat sua cuique dies, breve et inreparabile tempus omnibus est vitae',
         from: 'Ovidii Eneidon X',
     },
     {
