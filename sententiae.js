@@ -141,7 +141,7 @@ let sentences = [
     },
     {
         text: 'Hora est iam nos de somno surgere',
-        from: 'ad Romanos Epistisday',
+        from: 'ad Romanos Episttula XIII',
     },
     {
         text: 'Iam propera nec te venturas differ in horas, qui non est hodie, cras minus aptus erit',
