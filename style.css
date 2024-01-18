@@ -4,6 +4,7 @@ html, body {
     font-size: max(1.6vw, 24px);
     background-color: #f7f7f7; /* Set a background color */
     color: #080808;
+    overflow-y: hidden;
 }
 .hr {
     position: absolute;
@@ -14,7 +15,7 @@ html, body {
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Computer Modern Serif', serif;
 }
-.clock {
+.clockd {
     margin-top: 0px;
     margin-bottom: 12px;
     padding-left: 20px;
@@ -147,6 +148,14 @@ progress::-moz-progress-bar {
 @media only screen and (max-height: 400px) {
     .wsdm {
         display: none;
+    }
+}
+@media only screen and (max-height: 250px) {
+    progress {
+        display: none;
+    }
+    .hr {
+        transform: translateX(-50%) translateY(-40%);
     }
 }
 .inverted {
