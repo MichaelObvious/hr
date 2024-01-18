@@ -159,7 +159,7 @@ progress::-moz-progress-bar {
     }
 }
 .inverted {
-    filter: invert(100%) hue-rotate(180deg);
+    filter: invert(97%) hue-rotate(180deg);
 }
 * {
     -webkit-touch-callout: none;
