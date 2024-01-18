@@ -245,7 +245,7 @@ let sentences = [
     }
 ];
 
-function hourhash() {
+function timehash() {
     let time = new Date();
     let [d, sg, st, p, correction] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
     
@@ -276,7 +276,7 @@ let loadSententiae = () => {
     wsdmLabel = document.getElementById("wisdom");
     // let attrLabel = document.getElementById("attr");
 
-    let idx = hourhash() % sentences.length;
+    let idx = timehash() % sentences.length;
     let s = sentences[idx];
     if (wsdmLabel.innerHTML !== s.text) {
         if (wsdmLabel.innerHTML === "...") {
@@ -284,10 +284,10 @@ let loadSententiae = () => {
         } else {
             wsdmDiv.classList.remove("towrite");
             wsdmDiv.classList.add("toerase");
-            setTimeout(changeText, 15000, s);
+            setTimeout(changeText, 15 * 1000, s);
         }
     }
-    setTimeout(loadSententiae, 20000);
+    setTimeout(loadSententiae, 10 * 60 * 1000);
 
     // wsdmLabel.innerHTML = `«${s.text}»`;
     // attrLabel.innerHTML = `ex ${s.from}.`;
