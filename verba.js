@@ -240,7 +240,7 @@ let verba = [
         from: 'Senecae Minoris Epistulis moralibus ad Lucilium XXIV'
     },
     {
-        test: 'Si vult homo, in una die usque ad vesperam pervenit ad mensuram divinitatis',
+        text: 'Si vult homo, in una die usque ad vesperam pervenit ad mensuram divinitatis',
         from: 'Apophtegmatis Patrum, Abbae Alonii verbis'
     }
 ];
