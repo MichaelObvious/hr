@@ -140,6 +140,10 @@ let sentences = [
         from: 'Meridiana quadam',
     },
     {
+        text: 'Discat homo dinumerare horas, quot illarum vivit, tot breviat moras',
+        from: 'Meridiana quadam',
+    },
+    {
         text: 'Hora est iam nos de somno surgere',
         from: 'ad Romanos Episttula XIII',
     },
@@ -250,9 +254,10 @@ function hourhash() {
     let oneDay = 1000 * 60 * 60 * 24;
     let day = Math.floor(diff / oneDay);
     let year_day = day + correction;
+    let year = time.getFullYear();
 
-    let hash = (new Date()).getFullYear() * 3503909
-               + (year_day * 16 + d * 4 + sg) * 37;
+    let hash = time * 563
+               + year_day * 37;
     
     return hash;
 }
