@@ -362,8 +362,7 @@ function hour_name(hour, minute, sec, day, month, year) {
         //         break;
 		// 	case 1:
 		// 		fprintf(sink, "secunda");
-        //         break;
-		// 	case 2:
+        //         break;pt installation/activation (see below) for URLs accessed by the user insi
 		// 		fprintf(sink, "tertia");
         //         break;
 		// 	case 3:
@@ -399,7 +398,7 @@ let loadHorologium = () => {
 		}
 
         progress_bar.value = progress * 100.0;
-        clock.innerHTML = `${h}&nbsp; &nbsp;–&nbsp;&nbsp;&nbsp;${d}&nbsp;&nbsp;&nbsp;–&nbsp; &nbsp;${y}`;
+        clock.innerHTML = `<big>${h}</big><br/><div style="padding-top: 12px;"><small>${d}</small><br/><small>${y}</small>`;
         setTimeout(update, 1000);
     };
     update();
