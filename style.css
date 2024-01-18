@@ -131,11 +131,13 @@ progress::-moz-progress-bar {
     border: 0;
 }
 .footnote {
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
 }
-@media only screen and (max-height: 600px) {
+@media only screen and (max-height: 700px) {
     .footnote {
         display: none;
     }
