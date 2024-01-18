@@ -145,7 +145,7 @@ let sentences = [
     },
     {
         text: 'Hora est iam nos de somno surgere',
-        from: 'ad Romanos Episttula XIII',
+        from: 'ad Romanos Epistula XIII',
     },
     {
         text: 'Iam propera nec te venturas differ in horas, qui non est hodie, cras minus aptus erit',
@@ -188,7 +188,7 @@ let sentences = [
         from: 'Plinii Naturali historia XXXV',
     },
     {
-        text: 'Nulli optabilis dabitur mora, irrevocabilis labitur hora: ne sit inutilis, semper labora, neve sis futilis, vigila, ora:',
+        text: 'Nulli optabilis dabitur mora, irrevocabilis labitur hora: ne sit inutilis, semper labora, neve sis futilis, vigila, ora',
         from: 'Meridiana quadam',
     },
     {
