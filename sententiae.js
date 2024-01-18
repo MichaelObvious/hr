@@ -256,7 +256,7 @@ function timehash() {
     let year_day = day + correction;
     let year = time.getFullYear();
 
-    let hash = time * 563
+    let hash = year * 563
                + year_day * 37;
     
     return hash;
