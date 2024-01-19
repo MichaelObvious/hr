@@ -12,7 +12,7 @@ let verba = [
         from: 'Svetonii De vita Caesarum XXV, IV',
     },
     {
-        text: 'Rapiamus, amici, occasionem de die, dumque virent genua',
+        text: 'Rapiamus, amici, occasionem de die, dumque virent genua et decet, obducta solvatur fronte senectus!',
         from: 'Horatii Epod.. XVIII',
     },
     {
