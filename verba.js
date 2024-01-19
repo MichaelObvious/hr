@@ -307,7 +307,7 @@ let verba = [
         from: 'Florilegio Gottingensi'
     },
     {
-        text: 'Vivamus puri quasi simus cras morituri;Discamus veluti simus de tempore tuti',
+        text: 'Vivamus puri quasi simus cras morituri; Discamus veluti simus de tempore tuti',
         from: 'Philosophia Patrum'
     }
 ];
