@@ -21,9 +21,14 @@ h1,h2,h3,h4,h5,h6 {
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 10px;
-    html {
-        filter: invert(95%);
-    }
+    display: inline-block;
+    background-color: #efefef;
+    box-shadow: inset 0px 0px 1em 1em #f7f7f7;
+}
+p {
+    font-family: 'EB Garamond', serif;
+}
+a {
     color: #080808;
 }
 .towrite {
