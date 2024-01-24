@@ -391,10 +391,12 @@ let loadHorologium = () => {
         let y = year_name(time.getFullYear());
 
 		let content = document.querySelector('html');
-		if (isday == 1) {
+		if (isday === 1) {
 			content.classList.remove('inverted');
+			clock.classList.remove('glow');
 		} else {
 			content.classList.add('inverted');
+			clock.classList.add('glow');
 		}
 
         progress_bar.value = progress * 100.0;
