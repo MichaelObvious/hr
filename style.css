@@ -163,6 +163,7 @@ progress::-moz-progress-bar {
 }
 .inverted {
     filter: invert(95%) hue-rotate(180deg);
+    text-shadow: 0 0 0.05em #080808;
 }
 * {
     -webkit-touch-callout: none;
