@@ -39,14 +39,21 @@ a {
     animation: erase 15s 1 ease;
     mask-repeat: no-repeat;
 }
-.wsdm {
-    font-size: max(1.8vw, 26px);
-    font-family: 'Tangerine', serif;
+.wsdmpad {
     padding-top: 32px;
     padding-left: 24px;
     padding-right: 24px;
 }
-@keyframes fade {
+.wsdmunpad {
+    margin-top: -32px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.wsdm {
+    font-size: max(1.8vw, 26px);
+    font-family: 'Tangerine', serif;
+}
+@keyframes fade {max(1.8vw, 26px)
     0%   {color: #8f8f8f;}
     20%  {color: #2f2f2f;}
     25%  {color: #7f7f7f;}
@@ -174,4 +181,22 @@ progress::-moz-progress-bar {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+#analogclock {
+    margin: auto;
+    height: max(10vw, 144px);
+    width: max(10vw, 144px);
+    background: url(clock.svg) no-repeat;
+    background-size: 100%;
+}
+#needle {
+    position: relative;
+    background: #080808;
+    border-radius: 10px;
+    transform-origin: bottom;
+    width: 2%;
+    height: 40%;
+    top: 10%;
+    left: 49%;
+    opacity: 0.8;
 }

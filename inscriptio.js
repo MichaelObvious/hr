@@ -40,6 +40,15 @@ let updateInscription = () => {
             setTimeout(changeText, 15 * 1000, s);
         }
     }
+
+    if (ANALOG) {
+        wsdmDiv.classList.remove("wsdmpad");
+        wsdmDiv.classList.add("wsdmunpad");
+    } else {
+        wsdmDiv.classList.remove("wsdmunpad");
+        wsdmDiv.classList.add("wsdmpad");
+    }
+
     // wsdmLabel.innerHTML = `«${s.text}»`;
     // attrLabel.innerHTML = `ex ${s.from}.`;
 };
