@@ -398,6 +398,7 @@ let updateHorologium = () => {
 	} else {
 		content.classList.add('inverted');
 		text_clock.classList.add('glow');
+
 		angle = -90 + (180 / 4) * (segment + progress);
 	}
 
