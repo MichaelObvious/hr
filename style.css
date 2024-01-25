@@ -144,6 +144,7 @@ progress::-moz-progress-bar {
     width: 85%;
     left: 50%;
     transform: translateX(-50%);
+    font-size: max(min(2vh, 1vw), 12px);
 }
 @media only screen and (max-height: 700px) {
     .footnote {
@@ -199,4 +200,20 @@ progress::-moz-progress-bar {
     top: 10%;
     left: 49%;
     opacity: 0.8;
+}
+.warning {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-family: monospace;
+}
+.warningp {
+    font-family: monospace;
+    font-size: 18px;
+}
+button {
+    padding: 7.5px 25px 7.5px 25px;
+    font-family: monospace;
+    font-size: 12px;
 }

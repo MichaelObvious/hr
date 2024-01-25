@@ -1,15 +1,3 @@
-function getLocation() {
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(saveCoords);
-	} else {
-		console.error("Could not get geolocation");
-	}
-}
-
-var LAT = 41.893056;
-var LON = 12.482778;
-var ELE = 21.0;
-
 const JAN = 1;
 const FEB = 2;
 const MAR = 3;
@@ -22,31 +10,6 @@ const SEP = 9;
 const OCT = 10;
 const NOV = 11;
 const DEC = 12;
-
-function saveCoords(position) {
-	LAT = position.coords.latitude;
-	LON = position.coords.longitude;
-	if (position.coords.altitude) {
-		ELE = position.coords.altitude;
-	}
-
-	localStorage.setItem('LAT', LAT);
-	localStorage.setItem('LON', LON);
-	localStorage.setItem('ELE', ELE);
-	//   console.log(LAT, LON, ELE);
-}
-
-function checkStorage() {
-	if (localStorage.getItem('LAT') === null) {
-		localStorage.setItem('LAT', LAT);
-		localStorage.setItem('LON', LON);
-		localStorage.setItem('ELE', ELE);
-	} else {
-		LAT = localStorage.getItem('LAT');
-		LON = localStorage.getItem('LON');
-		ELE = localStorage.getItem('ELE');
-	}
-}
 
 function fmod(a, b) {
 	return a % b;
@@ -421,8 +384,6 @@ let updateHorologium = () => {
 };
 
 function loadHorologium() {
-	checkStorage();
-	getLocation();
 	// console.log(LAT, LON, ELE);
 
 	progress_bar = document.getElementById("prog");
