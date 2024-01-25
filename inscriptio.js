@@ -40,8 +40,11 @@ let updateInscription = () => {
             setTimeout(changeText, 15 * 1000, s);
         }
     }
-    setTimeout(updateInscription, 10 * 60 * 1000);
-
     // wsdmLabel.innerHTML = `«${s.text}»`;
     // attrLabel.innerHTML = `ex ${s.from}.`;
 };
+
+function loadInscription() {
+    updateInscription();
+    setInterval(updateInscription, 10 * 60 * 1000);
+}

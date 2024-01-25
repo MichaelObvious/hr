@@ -376,32 +376,36 @@ function hour_name(hour, minute, sec, day, month, year) {
     return [isday, segment, str, progress, correction];
 }
 
-let loadHorologium = () => {
+let progress_bar;
+let text_clock;
+
+let update = () => {
+	let time = new Date();
+	let [isday, segment, h, progress, correction] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
+	let d = day_name(time.getDate() + correction, time.getMonth()+1, time.getFullYear());
+	let y = year_name(time.getFullYear());
+
+	let content = document.querySelector('html');
+	if (isday === 1) {
+		content.classList.remove('inverted');
+		text_clock.classList.remove('glow');
+	} else {
+		content.classList.add('inverted');
+		text_clock.classList.add('glow');
+	}
+
+	progress_bar.value = progress * 100.0;
+	text_clock.innerHTML = `<big>${h}</big><br/><div style="padding-top: 12px;"><small>${d}</small><br/><small>${y}</small>`;
+};
+
+function loadHorologium() {
 	checkStorage();
     getLocation();
-
     // console.log(LAT, LON, ELE);
-    let progress_bar = document.getElementById("prog");
-    let clock = document.getElementById("clock");
 
-    let update = () => {
-        let time = new Date();
-        let [isday, segment, h, progress, correction] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
-        let d = day_name(time.getDate() + correction, time.getMonth()+1, time.getFullYear());
-        let y = year_name(time.getFullYear());
+    progress_bar = document.getElementById("prog");
+	text_clock = document.getElementById("textclock");
 
-		let content = document.querySelector('html');
-		if (isday === 1) {
-			content.classList.remove('inverted');
-			clock.classList.remove('glow');
-		} else {
-			content.classList.add('inverted');
-			clock.classList.add('glow');
-		}
-
-        progress_bar.value = progress * 100.0;
-        clock.innerHTML = `<big>${h}</big><br/><div style="padding-top: 12px;"><small>${d}</small><br/><small>${y}</small>`;
-        setTimeout(update, 1000);
-    };
-    update();
+	update();
+	setInterval(update, 1000);
 };
