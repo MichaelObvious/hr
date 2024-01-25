@@ -53,7 +53,7 @@ a {
     font-size: max(1.8vw, 26px);
     font-family: 'Tangerine', serif;
 }
-@keyframes fade {max(1.8vw, 26px)
+@keyframes fade {
     0%   {color: #8f8f8f;}
     20%  {color: #2f2f2f;}
     25%  {color: #7f7f7f;}
