@@ -1,5 +1,6 @@
-function timehash() {
+function timehash(offset = 0) {
     let time = new Date();
+    time.setDate(time.getDate() + offset);
     let [d, sg, st, p, correction] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
     
     let start = new Date(time.getFullYear(), 0, 0);
