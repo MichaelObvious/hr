@@ -98,7 +98,7 @@ window.onload = () => {
     loadInscription();
     
     setTimeout(
-        () => document.getElementById("root").style.transition = "5s ease all",
+        () => document.getElementById("root").style.transition = "5s ease filter",
         100
     );
 }
