@@ -5,7 +5,6 @@ html, body {
     background-color: #f7f7f7; /* Set a background color */
     color: #080808;
     overflow-y: hidden;
-    transition: 5s ease all;
 }
 .hr {
     position: absolute;
