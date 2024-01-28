@@ -144,7 +144,7 @@ progress::-moz-progress-bar {
     width: 85%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: max(min(2vh, 1vw), 12px);
+    font-size: max(1.7vh, 14px);
 }
 @media only screen and (max-height: 700px) {
     .footnote {
@@ -185,8 +185,8 @@ progress::-moz-progress-bar {
 }
 #analogclock {
     margin: auto;
-    height: max(10vh, 144px);
-    width: max(10vh, 144px);
+    height: max(20vh, 144px);
+    width: max(20vh, 144px);
     background: url("../img/clock.svg") no-repeat;
     background-size: 100%;
 }
