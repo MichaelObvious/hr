@@ -187,7 +187,7 @@ progress::-moz-progress-bar {
     margin: auto;
     height: max(10vw, 144px);
     width: max(10vw, 144px);
-    background: url(clock.svg) no-repeat;
+    background: url("../img/clock.svg") no-repeat;
     background-size: 100%;
 }
 #needle {
