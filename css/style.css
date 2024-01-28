@@ -1,7 +1,7 @@
 html, body {
     height: 100%;
     text-align: center;
-    font-size: max(1.6vw, 24px);
+    font-size: max(3vh, 24px);
     background-color: #f7f7f7; /* Set a background color */
     color: #080808;
     overflow-y: hidden;
@@ -50,7 +50,7 @@ a {
     padding-right: 24px;
 }
 .wsdm {
-    font-size: max(1.8vw, 26px);
+    font-size: max(2.8vh, 26px);
     font-family: 'Tangerine', serif;
 }
 @keyframes fade {
@@ -108,7 +108,7 @@ a {
 
 progress {
     width: 100%;
-    height: max(0.3vw, 4px);
+    height: max(0.3vh, 4px);
     background-color: #eeeeee;
     outline-color: transparent;
     color: #080808;
@@ -118,21 +118,21 @@ progress {
 }
 progress::-webkit-progress-bar {
     width: 100%;
-    height: max(0.3vw, 4px);
+    height: max(0.3vh, 4px);
     background-color: #eeeeee;
     outline-color: transparent;
     border: 0;
 }
 progress::-webkit-progress-value {
     width: 100%;
-    height: max(0.3vw, 4px);
+    height: max(0.3vh, 4px);
     background-color: #080808;
     outline-color: transparent;
     border: 0;
 }
 progress::-moz-progress-bar {
     width: 100%;
-    height: max(0.3vw, 4px);
+    height: max(0.3vh, 4px);
     background-color: #080808;
     outline-color: transparent;
     color: black;
@@ -185,8 +185,8 @@ progress::-moz-progress-bar {
 }
 #analogclock {
     margin: auto;
-    height: max(10vw, 144px);
-    width: max(10vw, 144px);
+    height: max(10vh, 144px);
+    width: max(10vh, 144px);
     background: url("../img/clock.svg") no-repeat;
     background-size: 100%;
 }
