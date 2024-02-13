@@ -9,7 +9,17 @@ function saveCoords(position) {
 	LON = position.coords.longitude;
 	if (position.coords.altitude) {
 		ELE = position.coords.altitude;
-	}
+	} else {
+        let url = `https://maps.googleapis.com/maps/api/elevation/json?locations=${LAT},${LON}`;
+        fetch(url).then((response) => {
+            return response.json();
+        }).then((data) => {
+            ELE = data['results']['elevation'];
+            console.log(ELE);
+        }).catch((err) => {
+            console.error('Could not get elevation:', err);
+        });
+    }
 
 	localStorage.setItem('LAT', LAT);
 	localStorage.setItem('LON', LON);
