@@ -1,4 +1,6 @@
 function timehash(offset = 0) {
+    let primes = [563,569,571,577,587,593,599,601,607,613,617,619];
+
     let time = new Date();
     time.setDate(time.getDate() + offset);
     let [d, sg, st, p, correction] = hour_name(time.getHours(), time.getMinutes(), time.getSeconds(), time.getDate(), time.getMonth()+1, time.getFullYear());
@@ -9,9 +11,10 @@ function timehash(offset = 0) {
     let day = Math.floor(diff / oneDay);
     let year_day = day + correction;
     let year = time.getFullYear();
+    let month = time.getMonth();
 
     let hash = year * 1291
-               + year_day * 563;
+               + year_day * primes[month];
     
     return hash;
 }
