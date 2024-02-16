@@ -11,9 +11,8 @@ function timehash(offset = 0) {
     let day = Math.floor(diff / oneDay);
     let year_day = day + correction;
     let year = time.getFullYear();
-    let month = time.getMonth();
-    let avg_month_length = 365.2425 / 12;
-    let prime_idx = Math.floor(month / (verba.length / avg_month_length)) % primes.length;
+
+    let prime_idx = Math.floor(year + year_day/verba.length) % primes.length;
 
     let hash = year * 1291
                + year_day * primes[prime_idx];
